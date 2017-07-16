@@ -1,0 +1,13 @@
+{
+    "name": "phunkie/pattern-matching",
+    "license": "MIT",
+    "require-dev": {
+        "kahlan/kahlan": "^3.1"
+    },
+    "autoload": {
+        "files": ["src/match.php"],
+        "psr-4": {
+            "Phunkie\\Lang\\": "src"
+        }
+    }
+}
