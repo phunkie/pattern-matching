@@ -23,7 +23,7 @@ describe("match", function() {
             $on = match($x); switch(true) {
                 case $on(1): $y = "one"; break;
                 case $on(2): $y = "two"; break;
-                case $on(3): $y = "two"; break;
+                case $on(3): $y = "three"; break;
             }
 
             expect($y)->toBe("one");
