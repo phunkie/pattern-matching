@@ -4,6 +4,8 @@ namespace Phunkie\Lang\PatternMatching {
 
     use Phunkie\Lang\PatternMatching\Match;
 
+    const _ = "Phunkie\\Lang\\PatternMatching::_";
+
     function match(...$values)
     {
         return new Match(...$values);
@@ -11,7 +13,12 @@ namespace Phunkie\Lang\PatternMatching {
 
     function conditionIsValid($condition, $value): bool
     {
-        return sameTypeSameValue($condition, $value);
+        switch(true):
+            case $condition === _:
+            case sameTypeSameValue($condition, $value):
+                return true;
+        endswitch;
+        return false;
     }
 
     function sameTypeSameValue($condition, $value)

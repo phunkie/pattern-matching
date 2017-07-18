@@ -1,6 +1,7 @@
 <?php
 
 use function \Phunkie\Lang\PatternMatching\match;
+use const \Phunkie\Lang\PatternMatching\_;
 
 describe("match", function() {
     context("behaving like a switch", function() {
@@ -27,6 +28,20 @@ describe("match", function() {
             }
 
             expect($y)->toBe("one");
+        });
+
+
+        it("multiple cases with default clause", function () {
+            $x = 4;
+            $y = null;
+
+            $on = match($x); switch(true) {
+                case $on(1): $y = "one"; break;
+                case $on(2): $y = "two"; break;
+                case $on(_): $y = "many"; break;
+            }
+
+            expect($y)->toBe("many");
         });
     });
 });
