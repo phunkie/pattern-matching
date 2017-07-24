@@ -9,5 +9,8 @@
         "psr-4": {
             "Phunkie\\Lang\\": "src"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/kahlan --reporter=verbose spec"
     }
 }
