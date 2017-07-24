@@ -1,9 +1,6 @@
 <?php
 
 namespace Phunkie\Lang\PatternMatching {
-
-    use Phunkie\Lang\PatternMatching\Match;
-
     const _ = "Phunkie\\Lang\\PatternMatching::_";
 
     function match(...$values)
