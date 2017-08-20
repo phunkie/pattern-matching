@@ -11,7 +11,6 @@ class Match
         $this->values = $values;
     }
 
-
     public function __invoke(...$conditions): bool
     {
         for ($position = 0; $position < count($conditions); $position++) {
