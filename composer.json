@@ -1,6 +1,9 @@
 {
     "name": "phunkie/pattern-matching",
     "license": "MIT",
+    "require": {
+        "phunkie/phunkie-adt": "0.1.0"
+    },
     "require-dev": {
         "kahlan/kahlan": "^3.1"
     },

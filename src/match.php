@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 
 namespace Phunkie\Lang\PatternMatching {
+
+    use Phunkie\ADT\SumTypeTag;
     const _ = "Phunkie\\Lang\\PatternMatching::_";
 
     function match(...$values): Match
@@ -91,5 +93,16 @@ namespace Phunkie\Lang\PatternMatching {
             }
         }
         return false;
+    }
+
+    function assertExhausted($case, $hash)
+    {
+        if ($case instanceof SumTypeTag) {
+            $notCheckedYet = $case::notCheckedYet($hash);
+            if (count($notCheckedYet) > 1) {
+                trigger_error("warning: match may not be exhaustive.\n" .
+                    "Patterns not matched: [" . implode(", ", $notCheckedYet) . "]", E_USER_WARNING);
+            }
+        }
     }
 }
